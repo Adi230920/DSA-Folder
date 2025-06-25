@@ -77,21 +77,21 @@ public class Lec_05 {
 
         // Pattern 5 : Check notes or patterns video 31:31 (Inverted Half Pyramid) roted 180 degree
 
-        // int n = 4 ;
+        int n = 4 ;
 
-        // //outer loop
-        // for(int i = 1 ; i <= n ; i++){
-        //     //inner loop - space print 
-        //     for(int j = 1 ; j <= n - i ; j++){
-        //         System.out.print("   ");
-        //     }
+        //outer loop
+        for(int i = 1 ; i <= n ; i++){
+            //inner loop - space print 
+            for(int j = 1 ; j <= n - i ; j++){
+                System.out.print("   ");
+            }
             
-        //     //inner loop - star print 
-        //     for(int j = 1 ; j <= i ; j++){
-        //         System.out.print(" * ");
-        //     }
-        //     System.out.println(); 
-        // }
+            //inner loop - star print 
+            for(int j = 1 ; j <= i ; j++){
+                System.out.print(" * ");
+            }
+            System.out.println(); 
+        }
 
         //------------------------------------------------------------------------------
 
@@ -142,21 +142,94 @@ public class Lec_05 {
 
         // Pattern 9 : Check notes or patterns video 53:18 (0 - 1 Triangle)
 
-        int n = 5 ;
+        // int n = 5 ;
 
-        //outer loop 
-        for(int i = 1 ; i <= n ; i++){
-            //inner loop 
-            for(int j = 1 ; j <= i ; j++){
-                int sum = i + j ;
-                if(sum % 2 == 0){
-                    System.out.print(" 1 ");
-                }else{
-                    System.out.print(" 0 ");
-                }
-            }
-            System.out.println();
-        }
+        // //outer loop 
+        // for(int i = 1 ; i <= n ; i++){
+        //     //inner loop 
+        //     for(int j = 1 ; j <= i ; j++){
+        //         int sum = i + j ;
+        //         if(sum % 2 == 0){
+        //             System.out.print(" 1 ");
+        //         }else{
+        //             System.out.print(" 0 ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
+
+        //-------------------------------------------------------------------------------
+
+        // Homework Problem - 1 (Solid Rhombus)
+
+        // int n = 5 ;
+
+        // //outer loop
+        // for(int i=1 ; i<=n ; i++){
+        //     //inner loop - space print 
+        //     for(int j=1 ; j<=n-i ; j++){
+        //         System.out.print(" ");
+        //     }
+
+        //     //inner loop - star print 
+        //     for(int j=1 ; j<=n ; j++){
+        //         System.out.print("*");
+        //     }
+        //     System.out.println();
+        // }
+
+        //--------------------------------------------------------------------------------------
+
+        // Homework Problem - 2 (Number Pyramid)
+
+        // int n = 5 ;
+
+        // //outer loop
+        // for(int i=1 ; i<=n ; i++){
+        //     //inner loop - space print 
+        //     for(int j=1 ; j<=n-i ; j++){
+        //         System.out.print(" ");
+        //     }
+
+        //     //inner loop - number print 
+        //     for(int j=1 ; j<=i ; j++){
+        //         System.out.print(" "+i);
+        //     }
+        //     System.out.println();
+        // }
+
+        //-----------------------------------------------------------------------------------
+
+        // Homework Problem - 3 : Pallindromic Number Pyramid 
+
+        // int n = 5 ;
+
+        // //outer loop
+        // for(int i=1 ; i<=n ; i++){
+        //     //inner loop - space print
+        //     for(int j=1 ; j<=n-i ; j++){
+        //         System.out.print(" ");
+        //     }
+
+        //     //inner loop - descending number print
+        //     for(int j=i ; j>=1 ; j--){
+        //         System.out.print(j);
+        //     }
+
+        //     //inner loop - ascending number print starting from 2 
+        //     for(int j=2 ; j<=i ; j++){
+        //         System.out.print(j);
+        //     }  
+        //     System.out.println();
+        // }
+
+
+
+
+
+
+
+
 
 
 
