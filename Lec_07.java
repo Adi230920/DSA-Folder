@@ -4,7 +4,7 @@ public class Lec_07 {
 
     // Print a given name in a function 
     public static void printMyName(String name) {
-        System.out.println(name);
+        System.out.println("Your Name is "+ name);
         return;
     }
 
