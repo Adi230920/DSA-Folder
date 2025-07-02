@@ -54,41 +54,44 @@ public class Lec_10 {
 
     //------------------------------------------------------------------------
 
-    Scanner sc = new Scanner(System.in);
+    // Scanner sc = new Scanner(System.in);
 
-    // Take array size as input 
-    System.out.print("Enter the array size : ");
-    int size = sc.nextInt();
+    // // Take array size as input 
+    // System.out.print("Enter the array size : ");
+    // int size = sc.nextInt();
 
-    int numbers[] = new int[size] ; 
+    // int numbers[] = new int[size] ; 
 
-    //Take array input values 
-    for(int i=0 ; i<size;i++){
-      System.out.print("Enter the number to put in array : ");
-      numbers[i] = sc.nextInt();
-    }
+    // //Take array input values 
+    // for(int i=0 ; i<size;i++){
+    //   System.out.print("Enter the number to put in array : ");
+    //   numbers[i] = sc.nextInt();
+    // }
 
-    System.out.println();
+    // System.out.println();
 
-    System.out.println("Array elements are : ");
-    for(int i=0 ; i<numbers.length ; i++){
-      System.out.print(numbers[i] + " ");
-    }
+    // System.out.println("Array elements are : ");
+    // for(int i=0 ; i<numbers.length ; i++){
+    //   System.out.print(numbers[i] + " ");
+    // }
 
-    System.out.println();
-    System.out.println();
+    // System.out.println();
+    // System.out.println();
 
-    System.out.print("Enter the number to be searched : ");
-    int search_num = sc.nextInt();
+    // System.out.print("Enter the number to be searched : ");
+    // int search_num = sc.nextInt();
 
-    System.out.println("Number Searching is : " + search_num);
+    // System.out.println("Number Searching is : " + search_num);
 
-    for(int i=0 ; i<numbers.length ; i++){
-      if(numbers[i] == search_num){
-        System.out.println("Number Found at Index : " + i);
-      }
-    }
+    // for(int i=0 ; i<numbers.length ; i++){
+    //   if(numbers[i] == search_num){
+    //     System.out.println("Number Found at Index : " + i);
+    //   }
+    // }
 
+    //------------------------------------------------------------------------
+
+    
     
 
 
