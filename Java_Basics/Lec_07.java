@@ -1,3 +1,4 @@
+package Java_Basics;
 import java.util.*;
 
 public class Lec_07 {

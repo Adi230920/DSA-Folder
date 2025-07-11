@@ -1,3 +1,4 @@
+package Java_Basics;
 public class Lec_06 {
     public static void main(String[] args) {
         
