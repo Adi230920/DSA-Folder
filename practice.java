@@ -90,10 +90,88 @@ public class practice {
 
     }
 
-    
+    // Remove Duplicates in a string 
+    public static boolean map[] = new boolean[26] ; // maping array 
 
+    public static void removeDuplicates(String str , int idx , String newString){
 
+        // Base Case 
+        if(idx == str.length()){
+            System.out.println(newString);
+            return;
+        }
+        // Operation 
+        char currChar = str.charAt(idx);
+        if(map[currChar - 'a'] == true){
+            removeDuplicates(str, idx+1, newString);
+        }
+        else{
+            newString = newString + currChar ;
+            map[currChar - 'a'] = true;
+            removeDuplicates(str, idx+1, newString);
+        }
 
+    }
+
+    // Print all the subsequences of a string 
+    public static void subsequences(String str , int idx , String newString){
+
+        // Base Case 
+        if(idx == str.length()){
+            System.out.println(newString);
+            return;
+        }
+        // Operation & Recursive call 
+        char currChar = str.charAt(idx);
+        // Call 1 : If he chooses
+        subsequences(str, idx+1, newString+currChar);
+        // Call 2 : If he does not choose 
+        subsequences(str, idx+1, newString);
+
+    }
+
+    // Print all the unique subsequences of a string 
+    public static void subsequences_unique(String str , int idx , String newString , HashSet<String> set){
+
+        // Base Case
+        if(idx == str.length()){
+            if(set.contains(newString)){
+                return ;
+            }
+            else{
+                System.out.println(newString);
+                set.add(newString);
+                return;
+            }
+        } 
+        // Operation 
+        char currChar = str.charAt(idx) ;
+        // Call 1 
+        subsequences_unique(str, idx+1, newString+currChar, set);
+        // Call 2
+        subsequences_unique(str, idx+1, newString, set);
+
+    }
+
+    // Print keypad combination 
+    public static String keypad [] = {"." , "abc" , "def" , "ghi" , "jkl" ,"mno" , "pqrs" , "tu" , "vwx" ,"yz" };
+
+    public static void printCombination(String str , int idx , String combination){
+
+        // Base Case 
+        if(idx == str.length()){
+            System.out.println(combination);
+            return;
+        }
+        // Operation 
+        char currChar = str.charAt(idx);
+        String mapping = keypad[currChar - '0'];
+
+        for(int i=0 ; i<mapping.length() ; i++){
+            printCombination(str, idx+1, combination+mapping.charAt(i));
+        }
+
+    }
 
     public static void main(String[] args) {
         
@@ -160,6 +238,37 @@ public class practice {
         // moveAllX(str, 0, 0, newstr);
 
         // System.out.println(newstr);
+
+        // String str = "abbccda" ;
+        // String newString = "" ;
+
+        // removeDuplicates(str, 0, newString);
+
+        // System.out.println(newString);
+
+        // String str = "abc" ;
+        // String newString = "";
+
+        // subsequences(str, 0, newString);
+
+        // System.out.println(newString);
+        
+        // String str = "aaaa" ;
+        // String newString = "";
+        // HashSet<String> set = new HashSet<>();
+
+        // subsequences_unique(str, 0, newString, set);
+
+        // System.out.println(newString);
+
+        String str = "23" ;
+        String combination = "" ;
+
+        printCombination(str, 0, combination);
+
+        System.out.println(combination);
+
+
 
         
 

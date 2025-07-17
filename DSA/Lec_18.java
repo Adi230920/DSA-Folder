@@ -1,5 +1,8 @@
 package DSA;
 
+import java.util.HashSet;
+import java.util.Scanner;
+
 public class Lec_18 {
 
     // Tower of Hanoi 
@@ -83,7 +86,7 @@ public class Lec_18 {
         // Base Case 
         if(idx == str.length()){
             for(int i=0 ; i<count ; i++){
-                newString = newString + 'x';
+                newString = newString + 'x' ;
             }
             System.out.println(newString);
             return;
@@ -95,12 +98,93 @@ public class Lec_18 {
             moveAllX(str, idx+1, count, newString);
         }
         else{
-            newString = newString + currChar ;
+            newString = newString + currChar;
             moveAllX(str, idx+1, count, newString);
         }
 
     }
 
+    // Remove Duplicates in a string 
+    public static boolean map[] = new boolean[26];
+
+    public static void removeDuplicates(String str , int idx , String newString){
+
+        // Base Case 
+        if(idx == str.length()){
+            System.out.println(newString);
+            return ;
+        }
+        // Operation 
+        char currChar = str.charAt(idx) ;
+        if( map[currChar - 'a'] == true){
+            removeDuplicates(str, idx+1, newString);
+        }
+        else{
+            newString = newString + currChar ;
+            map[currChar - 'a'] = true ;
+            removeDuplicates(str, idx+1, newString);
+        }
+
+    }
+
+    // Print all the subsequences of a string 
+    public static void subsequences(String str , int idx , String newString){
+
+        if(idx == str.length()){
+            System.out.println(newString);
+            return ;
+        }
+
+        char currChar = str.charAt(idx);
+        // to be 
+        subsequences(str, idx+1, newString+currChar);
+        
+        // or not to be 
+        subsequences(str, idx+1, newString);
+
+    }
+
+    // Print all the unique subsequences of a string 
+    public static void subsequences_unique(String str , int idx , String newString , HashSet<String>set){
+
+        // Base Case 
+        if(idx == str.length()){
+            if(set.contains(newString)){
+                return;
+            }
+            else{
+                System.out.println(newString);
+                set.add(newString);
+                return ;
+            }
+        }
+        // Operation
+        char currChar = str.charAt(idx); 
+        // Call 1 
+        subsequences_unique(str, idx+1, newString+currChar, set);
+        // Call 2 
+        subsequences_unique(str, idx+1, newString, set);
+
+    }
+
+    // Print keypad combination 
+    public static String keypad [] = {"." , "abc" , "def" , "ghi" , "jkl" , "mno" , "pqrs" , "tu" , "vwx" , "yz" } ;
+
+    public static void printComb(String str , int idx , String combination){
+
+        // Base Case
+        if(idx == str.length()){
+            System.out.println(combination);
+            return ;
+        } 
+        // Operation 
+        char currChar = str.charAt(idx);
+        String mapping = keypad[currChar - '0'];
+        for(int i=0 ; i<mapping.length() ;i++){
+            printComb(str, idx+1, combination+mapping.charAt(i));
+        }
+
+    }
 
 
     public static void main(String[] args) {
@@ -119,12 +203,45 @@ public class Lec_18 {
         // int arr[] = {1,2,3,3,5} ;
         // System.out.println(isSorted(arr, 0));
 
-        String str = "axbcxxd" ;
-        String newStr = "" ;
+        // String str = "axbcxxd" ;
+        // String newStr = "" ;
 
-        moveAllX(str, 0, 0, newStr);
+        // moveAllX(str, 0, 0, newStr);
+        // System.out.println(newStr);
 
-        System.out.println(newStr);
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("Enter the string : ");
+        // String str = sc.nextLine();
+        // //String str = "abbccda" ;
+        // String newStr = "" ;
+        // removeDuplicates(str, 0, newStr);
+        // System.out.println(newStr);
+
+        // String str = "abc" ;
+        // String newString = "" ;
+
+        // subsequences(str, 0, newString);
+
+        // System.out.println(newString);
+        
+        // String str = "aaa" ;
+        // String newString = "" ;
+        // HashSet <String> set = new HashSet<>();
+
+        // subsequences_unique(str, 0, newString,set);
+
+        // System.out.println(newString);
+
+        String str = "4" ; 
+        String combination = "" ;
+
+        printComb(str, 0, combination);
+
+        System.out.println(combination);
+
+
+
+
         
 
 
