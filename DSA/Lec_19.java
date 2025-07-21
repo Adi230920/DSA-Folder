@@ -1,25 +1,26 @@
-public class practice {
+package DSA;
 
-    // Print all the permutations of a string 
+public class Lec_19 {
+
+    // Print all permutations of a string 
     public static int count = 0 ;
-    public static void printPermutation(String str , String permutation){
+    public static void printPerm(String str , String permutation){
 
-        // Base Case 
+        // Base Case
         if(str.length() == 0){
             System.out.println(permutation);
             count++;
             return;
-        }
-        // Operation 
+        } 
+        // Operation
         for(int i=0 ; i<=str.length()-1 ; i++){
             char currChar = str.charAt(i);
-            String newStr = str.substring(0, i) + str.substring(i+1) ;
-            printPermutation(newStr, permutation+currChar);
+            String newStr = str.substring(0, i) + str.substring(i+1);
+            printPerm(newStr, permutation+currChar);
         }
-
     }
 
-    // Count total paths in a maze from (0,0) to (n,m)
+    // Count total paths in a maze to move from (0,0) to (n,m)
     public static int countPaths(int i , int j , int n , int m ){
 
         // Base Case - 1 
@@ -41,27 +42,26 @@ public class practice {
     }
 
     // Place Tiles of size (1xm) in a floor of size (nxm)
-    public static int placeTiles(int n , int m){
+    public static int placeTiles(int n , int m ){
 
-        // Base Case - 1
-        if( n == m){
-            return 2 ;
-        } 
-        // Base Case - 2 
-        if( n < m){
-            return 1 ;
+        // Base Case - 1 
+        if(n == m){
+            return 2 ; 
+        }
+        // Base Case - 2
+        if(n < m ){
+            return  1 ;
         }
 
-        // Operation 
-
-        // vertically - recursion applied here 
+        //vertically
         int vertPlacements = placeTiles(n-m, m);
-        // horizontally - recursion applied here
+        //horizontally
         int horPlacements = placeTiles(n-1, m);
 
         return vertPlacements + horPlacements ;
 
     }
+
 
     public static void main(String[] args) {
         
@@ -69,26 +69,23 @@ public class practice {
 
         // String str = "abc" ;
         // String newStr = " " ;
-        // printPermutation(str, newStr);
+        // printPerm(str, newStr);
         // System.out.println(newStr);
-        // System.out.println("Total Permutations : " + count);
 
-
-        // int n = 3 ; 
-        // int m = 3 ;
+        // int n = 3 , m = 3 ;
         // int totalPaths = countPaths(0, 0, n, m);
-        // System.out.println("Total Paths : " + totalPaths);
+        // System.out.println(totalPaths);
 
-        // int n = 4 ;
-        // int m = 2 ;
-        // System.out.println(placeTiles(n, m));
+        int n = 4 ; 
+        int m = 2 ;
 
-
-
+        System.out.println(placeTiles(n, m));
 
 
+        
 
 
 
     }
+    
 }
