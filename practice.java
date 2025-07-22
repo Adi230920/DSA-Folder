@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class practice {
 
     // Print all the permutations of a string 
@@ -63,6 +65,50 @@ public class practice {
 
     }
 
+    // Find the number of ways in which you can invite n people to your party , single or in pairs 
+    public static int callGuests(int n){
+
+        // Base Case 
+        if(n <= 1){
+            return 1 ;
+        }
+        // Operation 
+        // Calling single guests
+        int way1 = callGuests(n-1); 
+        // Calling pair guests 
+        int way2 = (n-1) * callGuests(n-2);
+
+        return way1 + way2 ;
+
+    }
+
+    // Print all the subsets of a set of first (n) natural numbers 
+    public static void printSubset(ArrayList<Integer> subset){
+        for(int i=0 ; i<subset.size() ; i++){
+            System.out.print(subset.get(i) + " ");
+        }
+        System.out.println();
+    }
+    public static int countComb = 0 ;
+    public static void findSubsets(int n , ArrayList<Integer> subset){
+
+        // Base Case
+        if(n == 0){
+            printSubset(subset);
+            countComb++;
+            return;
+        }
+
+        // Operation 
+        // Add Hoga
+        subset.add(n);
+        findSubsets(n-1, subset); 
+        // Add Nahi Hoga 
+        subset.remove(subset.size()-1);
+        findSubsets(n-1, subset);
+
+    }
+
     public static void main(String[] args) {
         
         // Recursion - 03 
@@ -82,6 +128,14 @@ public class practice {
         // int n = 4 ;
         // int m = 2 ;
         // System.out.println(placeTiles(n, m));
+
+        // int n = 4 ;
+        // System.out.println(callGuests(n));
+
+        int n = 3 ;
+        ArrayList<Integer> subset = new ArrayList<>();
+        findSubsets(n, subset);
+        System.out.println("Total Subsets : " + countComb);
 
 
 
