@@ -1,6 +1,10 @@
-public class practice {
+package DSA;
 
-    public static void printPerm(String str , String perm , int idx){
+import java.util.*;
+
+public class Lec_20 {
+
+    public static void printPermutation(String str , String perm , int idx ){
 
         // Base Case 
         if(str.length() == 0){
@@ -12,7 +16,7 @@ public class practice {
         for(int i=0 ; i<str.length() ; i++){
             char currChar = str.charAt(i);
             String newStr = str.substring(0, i) + str.substring(i+1);
-            printPerm(newStr, perm+currChar, idx+1);
+            printPermutation(newStr, perm + currChar, idx+1);
         }
 
     }
@@ -23,7 +27,9 @@ public class practice {
 
         String str = "ABC" ;
 
-        printPerm(str, "", 0);
+        printPermutation(str, "", 0);
+
+        
 
 
     }
